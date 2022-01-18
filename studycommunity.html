@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习社区</title>
+    <style type="text/css">
+        body,
+        div,
+        ul,
+        li {
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            background-color: #f1f1f1;
+        }
+
+        /*banner*/
+        #banner {
+            width: 100%;
+            height: 50px;
+            background-color: #2f5df2;
+            color: white;
+            font-size: 12px;
+            position: fixed;
+            text-align: center;
+            z-index: 999;
+        }
+
+        #banner div:nth-child(1) {
+            margin-left: 5%;
+            width: 7%;
+            height: 50px;
+            line-height: 50px;
+            float: left;
+        }
+
+        #banner div:nth-child(2) {
+            width: 7%;
+            height: 50px;
+            line-height: 50px;
+            float: left;
+        }
+
+        #banner div:nth-child(3) {
+            width: 7%;
+            height: 50px;
+            line-height: 50px;
+            float: left;
+        }
+
+        #banner div:nth-child(4) {
+            width: 7%;
+            height: 47px;
+            line-height: 50px;
+            float: left;
+            color: #acbefa;
+            font-weight: 600;
+            border-bottom: 3px solid #acbefa;
+        }
+
+        #banner div:nth-child(5) {
+            width: 7%;
+            height: 50px;
+            line-height: 50px;
+            float: left;
+        }
+
+        #banner div:nth-child(6) {
+            margin-right: 6%;
+            width: 6%;
+            height: 50px;
+            line-height: 50px;
+            float: right;
+        }
+        #banner div:nth-child(7) {
+            width: 6%;
+            height: 50px;
+            line-height: 50px;
+            float: right;
+        }
+
+        #banner div:hover {
+            background-color: #264ac2;
+        }
+
+        #menubtn {
+            display: none;
+        }
+
+        #menulist {
+            position: absolute;
+            top: 53px;
+            left: 1.5%;
+            background-color: #424242;
+            width: 150px;
+            text-align: center;
+            display: none;
+            z-index: 0;
+            opacity: 0.98;
+        }
+
+        #menulist li {
+            list-style: none;
+        }
+
+        #Login {
+            background-color: #b0c6f3;
+            display: none;
+            position: absolute;
+            top: 53px;
+            right: 6%;
+            height: 230px;
+            width: 230px;
+            text-align: center;
+            z-index: 0;
+            list-style: none;
+            opacity: 0.97;
+        }
+
+        #admin {
+            height: 25px;
+            width: 80%;
+            margin-top: 20px;
+            margin-left: 2%;
+        }
+
+        #psw {
+            height: 25px;
+            width: 80%;
+            margin-top: 10px;
+            margin-left: 2%;
+        }
+
+        #define {
+            height: 30px;
+            width: 83%;
+            margin-top: 10px;
+            margin-left: 2%;
+            background-color: #2f5df2;
+            border: 0;
+            color: white;
+        }
+
+        #reset {
+            height: 30px;
+            width: 83%;
+            margin-top: 10px;
+            margin-left: 2%;
+            background-color: #2f5df2;
+            border: 0;
+            color: white;
+        }
+
+        /*container*/
+        #container {
+            width: 100%;
+			height: auto;
+        }
+
+        #framebox {
+            width: 70%;
+            height: 100%;
+            margin: 0 auto;
+        }
+
+        #container #title1 {
+            width: 50%;
+            height: 10%;
+            font-size: 50px;
+            font-weight: 600;
+            color: #2f5df2;
+            padding-top: 9%;
+        }
+
+        #container #title2 {
+            width: 50%;
+            height: 2%;
+            font-size: 18px;
+            color: #2f5df2;
+            margin-top: -1%;
+        }
+
+        #container #storybtn {
+            width: 24%;
+            height: 2.8%;
+            text-align: center;
+            line-height: 250%;
+            border-radius: 10px;
+            background-color: #2f5df2;
+            color: white;
+            font-size: 16px;
+            float: right;
+            margin-top: -7%;
+            margin-right: 10%;
+        }
+
+        #guy{
+            width: 30%;
+            height: 16%;
+            float: right;
+            margin-right: 7%;
+        }
+
+        #container #stories {
+            width: 100%;
+            height: 88%;
+            margin-top: 2%;
+        }
+
+        #container #stories #l1 {
+            width: 48%;
+            height: 33%;
+            background-color: white;
+            border-radius: 20px;
+            float: left;
+            margin-top: 4%;
+        }
+
+        #pics1 {
+            width: 100%;
+            height: 33%;
+        }
+
+        #container #stories #r1 {
+            width: 48%;
+            height: 38%;
+            background-color: white;
+            border-radius: 20px;
+            float: right;
+            margin-top: -23%;
+            clear: both;
+        }
+
+        #pics2 {
+            width: 100%;
+            height: 30%;
+        }
+
+        #container #stories #l2 {
+            width: 48%;
+            height: 33%;
+            background-color: white;
+            border-radius: 20px;
+            float: left;
+            margin-top: -12%;
+            clear: both;
+        }
+
+        #pics3 {
+            width: 100%;
+            height: 33%;
+        }
+
+        #container #stories #r2 {
+            width: 48%;
+            height: 34%;
+            background-color: white;
+            border-radius: 20px;
+            float: right;
+            margin-top: -30%;
+            clear: both;
+            margin-bottom: 6%;
+        }
+
+        #pics4 {
+            width: 100%;
+            height: 33%;
+        }
+
+        #lfirst {
+            font-size: 24px;
+            color: #737373;
+            margin-top: 3%;
+            padding-left: 1%;
+            padding-right: 1%;
+        }
+
+        #lsecond {
+            font-size: 16px;
+            color: #2f5df2;
+            margin-top: 2.5%;
+            font-weight: 600;
+            margin-bottom: 2.5%;
+            padding-left: 1%;
+        }
+
+        #lthird,#lfourth {
+            text-indent: 2em;
+            padding-left: 1.5%;
+            padding-right: 1%;
+        }
+
+        #lfifth {
+            text-align: right;
+            margin-top: 2%;
+            margin-right: 1.5%;
+            color: #737373;
+        }
+
+
+        /*自适应*/
+        @media screen and (max-width: 800px) {
+
+            #yequ {
+                display: none;
+            }
+
+            #mine {
+                display: none;
+            }
+
+            #buy {
+                display: none;
+            }
+
+            #study {
+                display: none;
+            }
+
+            #practice {
+                display: none;
+            }
+
+            #register {
+                display: none;
+            }
+
+            #menubtn {
+                display: table;
+                margin-left: 5%;
+                width: 12%;
+                height: 50px;
+                line-height: 50px;
+                float: left;
+            }
+            #menulist li a{
+                color: white;
+                text-decoration: none;
+            }
+            #container #title1{
+                padding-top: 10%;
+            }
+            #container #storybtn{
+                width: 25%;
+            }
+        }
+
+        @media screen and (max-width: 600px){
+            #container #title1{
+                padding-top: 14%;
+            }
+        }
+
+        #menulist li:hover {
+            background-color: rgb(80, 79, 79);
+        }
+    </style>
+
+
+    <script type="text/javascript">
+        window.onload = function () {
+
+            /*下拉框效果*/
+            var product = document.getElementById("menubtn");
+            product.onmouseover = function () {
+                this.style.backgroundColor = "#264ac2";
+                document.getElementById("menulist").style.display = "block";
+            }
+            product.onmouseout = function () {
+                this.style.backgroundColor = "";
+                document.getElementById("menulist").style.display = "none";
+            }
+
+            /*登录框*/
+            logining.onclick=function(){
+                var a = document.getElementById("Login").style.display;
+                if (a == "none") {
+                    document.getElementById("Login").style.display = "block";
+                } else {
+                    document.getElementById("Login").style.display = "none";
+                }
+            }
+
+        }
+
+/*链接*/
+        function btnindex(){
+            document.location.href="index.html";
+        }
+        function btnregister(){
+            document.location.href="register.html";
+        }
+        function btnpractice(){
+            document.location.href="exercisebook.html";
+        }
+        function btnshopping(){
+            document.location.href="shopping.html";
+        }
+        function btnmycourse(){
+            document.location.href="mycourse.html";
+        }
+        function btnstory(){
+            document.location.href="story.html";
+        }
+    </script>
+
+
+</head>
+
+
+<body>
+    <div id="banner">
+        <div onclick="btnindex()" id="yequ"><img src="pic/2.png" style="width: 60%;height: 50%;margin-top: 15%;"></div>
+        <div onclick="btnmycourse()" id="mine">我的课程</div>
+        <div onclick="btnshopping()" id="buy">购买课程</div>
+        <div onclick="btn()" id="study">学习社区</div>
+        <div onclick="btnpractice()" id="practice">练习本</div>
+        <div onclick="btnregister()" id="register">注册</div>
+        <div onclick="btn()" id="logining">登录
+            <ul id="Login">
+                <li><input class="txt" type="text" id="admin" value="请输入用户名…" style="color: thistle;"></li>
+                <li><input class="txt" type="paasword" id="psw" value="请输入密码…" style="color: thistle;"></li>
+                <li><input type="button" value="确定" id="define"></li>
+                <li><input type="button" value="重置" id="reset"></li>
+            </ul>
+        </div>
+        <li id="menubtn" style="color: white" onclick="btn1()">MENU
+            <ul id="menulist">
+                <li ><a href="index.html">首页</a></li>
+                <li ><a href="mycourse.html">我的课程</a></li>
+                <li><a href="shopping.html">购买课程</a></li>
+                <li><a href="studycommunity.html">学习社区</a></li>
+                <li><a href="exercisebook.html">练习本</a></li>
+                <li><a href="register.html">注册</a></li>
+            </ul>
+        </li>
+    </div>
+
+    <div id="container">
+        <div id="framebox">
+            <div id="title1">Community</div>
+            <div id="title2">学习社区</div>
+            <div id="storybtn" onclick="btnstory()">告诉我们你的故事</div>
+            <div id="guy"><img src="pic/blur-guy.png" style="height: 100%;width: 100%;"></div>
+
+            <div id="stories">
+                <div id="l1">
+                    <div id="pics1"><img src="pic/r1.png"
+                            style="height: 100%;width: 100%;border-radius: 20px 20px 0px 0px;"></div>
+                    <div id="lfirst">当生活小有压力，是兴趣给我创造惊喜</div>
+                    <div id="lsecond">@橘喵，金融从业者，武汉</div>
+                    <div id="lthird"> “在夜曲学习，每个编程概念都有隐喻，学起来很有意思，还特别符合我们这一代人打游戏的价值观，只要进阶了就会有奖励，每天学习就像闯关一样，天天解锁新惊喜，还挺有趣的～
+                    </div>
+                    <div id="lfourth">而且助教老师太负责了，回复速度超快，这样我的问题都能得到及时的解决，学起来也就更有动力了。学知识必须要知其所以然，带着没有解决的疑问去学习，会让我觉得效率很低下。”
+                    </div>
+                    <div id="lfifth">Jan.25.2021</div>
+                </div>
+                <div id="r1">
+                    <div id="pics2"><img src="pic/l1.jpg"
+                            style="height: 100%;width: 100%;border-radius: 20px 20px 0px 0px;"></div>
+                    <div id="lfirst">85后金融人：30岁后再踏进网吧，是因为我要写代码</div>
+                    <div id="lsecond">@小R，金融从业者，某银行管理人员</div>
+                    <div id="lthird">
+                        三十多岁的年轻人正是职场的中流砥柱，小R也不例外。在银行同时负责网点运营和销售管理的他，每天都忙得像个陀螺。所以小R都在凌晨学习，正好赶上夜曲课程更新的第一时间“趁热吸收”。快节奏的工作让小R的学习条件变得苛刻。他没有完整的时间用来做题，不像其他同学能随堂完成练习。在夜曲学完了四门课程，百题斩基本都是赶在结课前，熬夜完成的。
+                    </div>
+                    <div id="lfourth">“书山文海里诗和远方，绵绵夜曲间星辰大海。”这是小R送给夜曲的寄语，也是他获取快乐的途径：书籍和编程。</div>
+                    <div id="lfifth">April.2.2021</div>
+                </div>
+                <div id="l2">
+                    <div id="pics3"><img src="pic/l2.jpg"
+                            style="height: 100%;width: 100%;border-radius: 20px 20px 0px 0px;"></div>
+                    <div id="lfirst">中年工程师：50岁的我，是纯粹的终生学习者</div>
+                    <div id="lsecond">@小伟，吉林省镇赉县融媒体中心工程师</div>
+                    <div id="lthird">小伟在上午和外教学口语，下午在夜曲学Python，晚上睡前还背单词…这些都是雷打不动的日程。</div>
+                    <div id="lfourth">
+                        “我发现很多Python的语法有英语的逻辑，有些概念直接用英文单词代表，记忆起来很轻松。这都得益于这些年学习打下的基础。”对学习的热情和好奇心，让小伟进步神速，一切能用到Python技巧的机会，他都没放过，用他的话来说，这是“用实践检验理论”。
+                    </div>
+                    <div id="lfifth">Feb.22.2021</div>
+                </div>
+                <div id="r2">
+                    <div id="pics4"><img src="pic/r2.jpg"
+                            style="height: 100%;width: 100%;border-radius: 20px 20px 0px 0px;"></div>
+                    <div id="lfirst">麻醉科医生：工作10年，Python成了我生活里的小乐趣</div>
+                    <div id="lsecond">@板砖，麻醉科医生，上海</div>
+                    <div id="lthird">在平淡生活里能坚持的人生兴趣，以及对未知领域保有的好奇心态。</div>
+                    <div id="lfourth">
+                        每天5点多起床，晚上12点睡觉，在这期间，他几乎利用了每一块“碎片化时间”进行学习：早晨遛狗、地铁通勤、工作间歇……都被他用来在手机上预习课程视频、复习代码卡片。晚上10点多，这就是板砖同学与百题斩专属的“独处时间”。
+                    </div>
+                    <div id="lfifth">Dec.28.2020</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

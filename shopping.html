@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购买课程</title>
+    <style type="text/css">
+        body,
+        div,
+        ul,
+        li {
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            background-color: #f1f1f1;
+        }
+
+        /*banner*/
+        #banner {
+            width: 100%;
+            height: 50px;
+            background-color: #2f5df2;
+            color: white;
+            font-size: 12px;
+            position: fixed;
+            text-align: center;
+            z-index: 999;
+        }
+
+        #banner div:nth-child(1) {
+            margin-left: 5%;
+            width: 7%;
+            height: 50px;
+            line-height: 50px;
+            float: left;
+        }
+
+        #banner div:nth-child(2) {
+            width: 7%;
+            height: 50px;
+            line-height: 50px;
+            float: left;
+        }
+
+        #banner div:nth-child(3) {
+            width: 7%;
+            height: 47px;
+            line-height: 50px;
+            float: left;
+            color: #acbefa;
+            font-weight: 600;
+            border-bottom: 3px solid #acbefa;
+        }
+
+        #banner div:nth-child(4) {
+            width: 7%;
+            height: 50px;
+            line-height: 50px;
+            float: left;
+        }
+
+        #banner div:nth-child(5) {
+            width: 7%;
+            height: 50px;
+            line-height: 50px;
+            float: left;
+        }
+
+        #banner div:nth-child(6) {
+            margin-right: 6%;
+            width: 6%;
+            height: 50px;
+            line-height: 50px;
+            float: right;
+        }
+        #banner div:nth-child(7) {
+            width: 6%;
+            height: 50px;
+            line-height: 50px;
+            float: right;
+        }
+
+        #banner div:hover {
+            background-color: #264ac2;
+        }
+
+        #menubtn {
+            display: none;
+        }
+
+        #menulist {
+            position: absolute;
+            top: 53px;
+            left: 1.5%;
+            background-color: #424242;
+            width: 150px;
+            text-align: center;
+            display: none;
+            z-index: 0;
+            opacity: 0.98;
+        }
+
+        #menulist li {
+            list-style: none;
+        }
+
+        #Login {
+            background-color: #b0c6f3;
+            display: none;
+            position: absolute;
+            top: 53px;
+            right: 6%;
+            height: 230px;
+            width: 230px;
+            text-align: center;
+            z-index: 0;
+            list-style: none;
+            opacity: 0.97;
+        }
+
+        #admin {
+            height: 25px;
+            width: 80%;
+            margin-top: 20px;
+            margin-left: 2%;
+        }
+
+        #psw {
+            height: 25px;
+            width: 80%;
+            margin-top: 10px;
+            margin-left: 2%;
+        }
+
+        #define {
+            height: 30px;
+            width: 83%;
+            margin-top: 10px;
+            margin-left: 2%;
+            background-color: #2f5df2;
+            border: 0;
+            color: white;
+        }
+
+        #reset {
+            height: 30px;
+            width: 83%;
+            margin-top: 10px;
+            margin-left: 2%;
+            background-color: #2f5df2;
+            border: 0;
+            color: white;
+        }
+
+        /*container*/
+        #container {
+            width: 100%;
+			height: auto;
+        }
+
+        #container #title{
+            width: auto;
+            height: 10%;
+            font-size: 2vw;
+            color: #2f5df2;
+            padding-top: 8%;
+            margin-left: 10%;
+        }
+
+		#container div:nth-child(2) ul {
+			font-size: 1.8vw;
+			list-style: none;
+            margin-left: 10%;
+            margin-top: 1%;
+            font-size: 1.7vw;
+		}
+
+		#container div:nth-child(2) ul li {
+			float: left;
+			padding: 0 15px;
+			text-align: center;
+			border-right: 1px solid #cfcfcf;
+		}
+
+		#container div:nth-child(2) ul li:nth-child(1) {
+			padding: 0px;
+			border-right: 0px;
+			width: 100px;
+			text-align: left;
+		}
+
+
+        #innerContent {
+			width: 90%;
+			margin: 50px auto;
+			min-height: 350px;
+		}
+
+		#innerContent ul {
+			list-style: none;
+			width: 25%;
+			min-height: 200px;
+			background-color: #fff;
+			float: left;
+			margin: 4%;
+			transition: box-shadow 0.4s;
+		}
+
+		#innerContent ul:hover {
+			box-shadow: 0px 10px 10px #D7D7D7;
+		}
+
+		#innerContent ul li {
+			width: 100%;
+			text-align: center;
+			color: gray;
+			font-size: 20px;
+			margin-top: 20px;
+		}
+
+		#innerContent ul li:nth-child(1) {
+			margin-top: 60px;
+		}
+
+		#innerContent ul li img {
+			width: 95%;
+			height: auto;
+		}
+
+		.clear {
+			clear: both;
+		}
+
+
+
+        /*自适应*/
+        @media screen and (max-width: 800px) {
+
+            #yequ {
+                display: none;
+            }
+
+            #mine {
+                display: none;
+            }
+
+            #buy {
+                display: none;
+            }
+
+            #study {
+                display: none;
+            }
+
+            #practice {
+                display: none;
+            }
+
+            #register {
+                display: none;
+            }
+
+            #menubtn {
+                display: table;
+                margin-left: 5%;
+                width: 12%;
+                height: 50px;
+                line-height: 50px;
+                float: left;
+            }
+            #menulist li a{
+                color: white;
+                text-decoration: none;
+            }
+            #container #title{
+                padding-top: 12%;
+            }
+        }
+
+        #menulist li:hover {
+            background-color: rgb(80, 79, 79);
+        }
+    </style>
+
+
+    <script type="text/javascript">
+        window.onload = function () {
+
+            /*下拉框效果*/
+            var product = document.getElementById("menubtn");
+            product.onmouseover = function () {
+                this.style.backgroundColor = "#264ac2";
+                document.getElementById("menulist").style.display = "block";
+            }
+            product.onmouseout = function () {
+                this.style.backgroundColor = "";
+                document.getElementById("menulist").style.display = "none";
+            }
+
+            /*登录框*/
+            logining.onclick=function(){
+                var a = document.getElementById("Login").style.display;
+                if (a == "none") {
+                    document.getElementById("Login").style.display = "block";
+                } else {
+                    document.getElementById("Login").style.display = "none";
+                }
+            }
+        }
+
+/*链接*/
+        function btnindex(){
+            document.location.href="index.html";
+        }
+        function btnregister(){
+            document.location.href="register.html";
+        }
+        function btnpractice(){
+            document.location.href="exercisebook.html";
+        }
+        function btnstudy(){
+            document.location.href="studycommunity.html";
+        }
+        function btnmycourse(){
+            document.location.href="mycourse.html";
+        }
+    </script>
+
+
+</head>
+
+
+<body>
+    <div id="banner">
+        <div onclick="btnindex()" id="yequ"><img src="pic/2.png" style="width: 60%;height: 50%;margin-top: 15%;"></div>
+        <div onclick="btnmycourse()" id="mine">我的课程</div>
+        <div onclick="btn()" id="buy">购买课程</div>
+        <div onclick="btnstudy()" id="study">学习社区</div>
+        <div onclick="btnpractice()" id="practice">练习本</div>
+        <div onclick="btnregister()" id="register">注册</div>
+        <div onclick="btn()" id="logining">登录
+            <ul id="Login">
+                <li><input class="txt" type="text" id="admin" value="请输入用户名…" style="color: thistle;"></li>
+                <li><input class="txt" type="paasword" id="psw" value="请输入密码…" style="color: thistle;"></li>
+                <li><input type="button" value="确定" id="define"></li>
+                <li><input type="button" value="重置" id="reset"></li>
+            </ul>
+        </div>
+        <li id="menubtn" style="color: white" onclick="btn1()">MENU
+            <ul id="menulist">
+                <li ><a href="index.html">首页</a></li>
+                <li ><a href="mycourse.html">我的课程</a></li>
+                <li><a href="shopping.html">购买课程</a></li>
+                <li><a href="studycommunity.html">学习社区</a></li>
+                <li><a href="exercisebook.html">练习本</a></li>
+                <li><a href="register.html">注册</a></li>
+            </ul>
+        </li>
+    </div>
+
+    <div id="container">
+        <div id="title">课程列表</div>
+		<div>
+			<ul id="sort">
+				<li>分类：</li>
+				<li>入门课</li>
+				<li>进阶课</li>
+				<li>扩展课</li>
+				<li>语法课</li>
+                <li>算法课</li>
+			</ul>
+		</div>
+		<div id="innerContent">
+
+		</div>
+    </div>
+    <div class="clear"></div>
+</body>
+
+
+<script type="text/javascript">
+	//课程json数据
+	var productJson = {
+		"productJsonList": [
+			{
+				"sort": "入门课",
+				"url": "pic1",
+				"Name": "Python入门课程"
+			},
+			{
+				"sort": "入门课",
+				"url": "pic2",
+				"Name": "百题斩More"
+			},
+			{
+				"sort": "进阶课",
+				"url": "pic3",
+				"Name": "Python数据可视化"
+			},
+			{
+				"sort": "进阶课",
+				"url": "pic4",
+				"Name": "Python数据分析"
+			},
+			{
+				"sort": "进阶课",
+				"url": "pic5",
+				"Name": "Python网络爬虫"
+			},
+			{
+				"sort": "进阶课",
+				"url": "pic6",
+				"Name": "Python办公效率化"
+			}
+		]
+	};
+
+	var innerContent = document.getElementById("innerContent");
+	//---初始化图片,打开的时候所有图片都在
+	initialSetImage();
+	function initialSetImage() {
+		var json1 = productJson.productJsonList; //productJsonList是数组，获得内容
+		for (var i = 0; i < json1.length; i++) {
+			var obj = json1[i];
+			createImage(obj.Name, obj.url);
+		}
+	}
+
+	//---创建图片
+	function createImage(myname, url) {
+		var myUl = document.createElement("ul");
+		var myLi1 = document.createElement("li");
+		var myLi2 = document.createElement("li");
+		var myText = document.createTextNode(myname);
+		myLi2.appendChild(myText);
+		var myImg = document.createElement("img");
+		myImg.setAttribute("src", "pic/" + url + ".jpg");  //创建属性，url是传递进来的
+        myLi1.appendChild(myImg);
+		myUl.appendChild(myLi1);
+		myUl.appendChild(myLi2);
+		innerContent.appendChild(myUl);  //innerContent是外部div的名字
+	}
+
+	//点击菜单，显示对应内容
+	var selectMenuName = "";
+	var menuNameArr = ["入门课", "进阶课", "扩展课", "小米", "语法课", "算法课"];
+	var brandUL = document.getElementById("sort").getElementsByTagName("li");
+	for (var i = 0; i < brandUL.length; i++) {
+		brandUL[i].indexNum = i;
+		brandUL[i].onclick = function () {
+			alert(menuNameArr[this.indexNum - 1]);
+			innerContent.innerHTML = "";
+			selectMenuName = menuNameArr[this.indexNum - 1];
+			setImage(selectMenuName);
+		}
+	}
+
+
+	//---从json中读取相应数据用于创建图片
+	function setImage(menuName) {
+		var URL = "";
+		var myName = "";
+		var json1 = productJson.productJsonList;
+		for (var i = 0; i < json1.length; i++) {
+			var obj = json1[i];
+			if (menuName == obj.sort) {
+				URL = obj.url;
+				myName = obj.Name;
+				createImage(myName, URL);
+			}
+		}
+	}
+
+</script>
+
+</html>
